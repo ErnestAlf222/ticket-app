@@ -74,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                   smallText: 'view all',
                 ),
                 const SizedBox(height: 20),
-                const TicketView()
+                const TicketView(),
               ],
             ),
           ),

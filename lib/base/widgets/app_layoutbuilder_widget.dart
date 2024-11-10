@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 
 class AppLayoutBuilder extends StatelessWidget {
   final int randomDivider;
-  const AppLayoutBuilder({super.key, required this.randomDivider});
+  final double width;
+  const AppLayoutBuilder({
+    super.key,
+    required this.randomDivider,
+    this.width = 3,
+  });
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-
         // print("${(constraints.constrainWidth() / randomDivider).floor()}");
 
         return Flex(
@@ -16,12 +20,12 @@ class AppLayoutBuilder extends StatelessWidget {
           direction: Axis.horizontal,
           children: List.generate(
             (constraints.constrainWidth() / randomDivider).floor(),
-            (index) => const SizedBox(
-              width: 3,
+            (index) =>  SizedBox(
+              width: width,
               height: 1,
-              child: DecoratedBox(decoration: BoxDecoration(
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
                 color: Colors.white,
-
               )),
             ),
           ),
