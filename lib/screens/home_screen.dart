@@ -1,9 +1,12 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 // My imports
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -69,12 +72,24 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const AppDoubleText(
+                 AppDoubleText(
                   bigText: 'Upcoming flights',
                   smallText: 'view all',
+                  func: () =>context.push('/all_tickets'),
                 ),
                 const SizedBox(height: 20),
-                const TicketView(),
+                 SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ticketList.map((singleTicket) =>  TicketView(ticket:singleTicket) ).toList(),
+                  ),
+                ),
+                const SizedBox(height: 40),
+                 AppDoubleText(
+                  bigText: 'Hotels',
+                  smallText: 'view all',
+                  func:() {},
+                ),
               ],
             ),
           ),
