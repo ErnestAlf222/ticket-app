@@ -1,6 +1,5 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 // My imports
@@ -8,6 +7,7 @@ import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/widgets/widgets.dart';
+import 'package:ticket_app/screens/screens.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -81,15 +81,21 @@ class HomeScreen extends StatelessWidget {
                  SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: ticketList.map((singleTicket) =>  TicketView(ticket:singleTicket) ).toList(),
+                    children: ticketList.map((singleTicket) =>  TicketView(ticket:singleTicket) ) 
+                    .take(3)
+                    .toList(),
                   ),
                 ),
                 const SizedBox(height: 40),
                  AppDoubleText(
                   bigText: 'Hotels',
                   smallText: 'view all',
-                  func:() {},
+                  func:() {
+                    print("hola");
+                  },
                 ),
+
+                const Hotel()
               ],
             ),
           ),
