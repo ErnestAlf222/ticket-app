@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,30 +73,38 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                 AppDoubleText(
+                AppDoubleText(
                   bigText: 'Upcoming flights',
                   smallText: 'view all',
-                  func: () =>context.push('/all_tickets'),
+                  func: () => context.push('/all_tickets'),
                 ),
                 const SizedBox(height: 20),
-                 SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: ticketList.map((singleTicket) =>  TicketView(ticket:singleTicket) ) 
-                    .take(3)
-                    .toList(),
+                    children: ticketList
+                        .map((singleTicket) => TicketView(ticket: singleTicket))
+                        .take(3)
+                        .toList(),
                   ),
                 ),
                 const SizedBox(height: 40),
-                 AppDoubleText(
+                AppDoubleText(
                   bigText: 'Hotels',
                   smallText: 'view all',
-                  func:() {
+                  func: () {
                     print("hola");
                   },
                 ),
-
-                const Hotel()
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: hotelList
+                          .map((singleHotel) => Hotel(hotel: singleHotel))
+                          .take(3)
+                          .toList(),
+                    )),
               ],
             ),
           ),
