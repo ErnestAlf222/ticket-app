@@ -13,7 +13,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   // list is iterable using index
   final appScreens = [
     const HomeScreen(),
-    const Center(child: Text("Search")),
+    const SearchScreen(),
     const Center(child: Text("Tickets")),
     const Center(child: Text("Profile")),
   ];

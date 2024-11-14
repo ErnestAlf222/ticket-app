@@ -1,3 +1,6 @@
-export 'all_tickets.dart';
-export 'home_screen.dart';
-export 'widgets/hotel.dart';
+export 'home/all_tickets.dart';
+export 'home/home_screen.dart';
+export 'search/search_screen.dart';
+export 'search/widgets/app_text_icon.dart';
+export 'search/widgets/app_ticket_tabs.dart';
+export 'home/widgets/hotel.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class Hotel extends StatelessWidget {
@@ -36,15 +35,15 @@ class Hotel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "Open space",
-              style: AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
+               hotel['place'],
+              style: AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor,),
             ),
           ),
           const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "London",
+              hotel['destination'],
               style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
             ),
           ),
@@ -52,11 +51,10 @@ class Hotel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "\$25/night",
+              "\$${hotel['price']}/night",
               style: AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
             ),
           ),
-
         ],
       ),
     
