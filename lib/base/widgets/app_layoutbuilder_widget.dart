@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class AppLayoutBuilder extends StatelessWidget {
   final int randomDivider;
   final double width;
+  final bool? isColor;
   const AppLayoutBuilder({
     super.key,
     required this.randomDivider,
     this.width = 3,
+    this.isColor,
   });
 
   @override
@@ -20,12 +22,12 @@ class AppLayoutBuilder extends StatelessWidget {
           direction: Axis.horizontal,
           children: List.generate(
             (constraints.constrainWidth() / randomDivider).floor(),
-            (index) =>  SizedBox(
+            (index) => SizedBox(
               width: width,
               height: 1,
-              child: const DecoratedBox(
+              child: DecoratedBox(
                   decoration: BoxDecoration(
-                color: Colors.white,
+                color: isColor == null ? Colors.white : Colors.grey.shade300,
               )),
             ),
           ),
