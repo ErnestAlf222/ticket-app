@@ -63,3 +63,4 @@ class Hotel extends StatelessWidget {
     );
   }
 }
+

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/utils/app_router.dart';
 import 'package:ticket_app/base/widgets/widgets.dart';
 import 'package:ticket_app/screens/screens.dart';
 import 'package:ticket_app/screens/search/widgets/ticket_promotion.dart';
@@ -33,7 +32,7 @@ class SearchScreen extends StatelessWidget {
           AppDoubleText(
             bigText: 'Upcoming flights',
             smallText: 'view all',
-            func: () => context.push('/all_tickets'),
+            func: () => Navigator.pushNamed(context, AppRoutes.allTicket),
           ),
           const SizedBox(height: 15),
 
