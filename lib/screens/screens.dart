@@ -1,6 +1,7 @@
 export 'home/all_tickets.dart';
 export 'home/home_screen.dart';
 export 'home/widgets/hotel.dart';
+export 'hotel_detail.dart';
 export 'search/search_screen.dart';
 export 'search/widgets/app_text_icon.dart';
 export 'search/widgets/app_ticket_tabs.dart';

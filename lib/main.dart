@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.allTicket:(context) => const AllTickets(),
         AppRoutes.ticketScreen:(context) => const TicketScreen(),
         AppRoutes.allHotels:(context) => const AllHotels(),
+        AppRoutes.hotelDetail:(context) => const HotelDetail(),
 
       },
 
